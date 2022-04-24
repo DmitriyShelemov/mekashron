@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    height: 54px;
+    padding: 6px;
+    border-top: 0.2em solid lightgray;
+    box-shadow: 5px 5px 6px 3px lightgray;
+    
+    .logo{
+
+
+        img{
+            object-fit: cover;
+            height: 38px;
+        }
+    }
+
+    .bar{
+        flex: 1;
+        margin: auto;
+        max-width: 550px;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
