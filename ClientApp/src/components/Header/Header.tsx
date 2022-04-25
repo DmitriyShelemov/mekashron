@@ -1,27 +1,26 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { Menu } from "./Menu";
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import logoImage from './../../assets/img/logo.svg'
 import styles from './Header.module.scss'
 
 const Header = () => {
     return (
-      <div className={styles.header}>
-        <div className={styles.logo}>
-            <img src={logoImage} alt="" />
-        </div>        
-        <div className={styles.bar}>
-            <ButtonGroup aria-label="Top bar">
+        <Navbar bg="light" expand="lg">
+        <Container>
+            <Navbar.Brand href="/"><div className={styles.logo}><img src={logoImage} alt="" /></div></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
                 {Menu.map((item, idx) => (
 
-                    <Button variant="secondary" key={`left_menu_item_${idx}`}>
-                        <Link to={item.link}>{item.title}</Link>
-                    </Button>
+                <Link key={`left_menu_item_${idx}`} className="nav-link" to={item.link}>{item.title}</Link>
                 ))}
-            </ButtonGroup>
-        </div>
-      </div>
+            </Nav>
+            </Navbar.Collapse>
+        </Container>
+        </Navbar>
     );
   }
   
